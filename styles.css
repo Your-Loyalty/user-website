@@ -1,0 +1,63 @@
+/* Base (light mode) */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #ffffff;
+    color: #111111;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    text-align: center;
+    width: 100%;
+    max-width: 320px;
+    padding: 20px;
+}
+
+.logo {
+    width: 120px;
+    /* adjust as needed */
+    height: auto;
+    margin-bottom: 24px;
+}
+
+.logo-dark {
+    display: none;
+}
+
+.tagline {
+    font-size: 16px;
+    font-style: italic;
+    color: #444444;
+    margin-top: 12px;
+}
+
+/* Dark mode (follows system/browser preference) */
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #050608;
+        color: #f5f5f5;
+    }
+
+    .tagline {
+        color: #d1d5db;
+    }
+
+    .logo-light {
+        display: none;
+    }
+
+    .logo-dark {
+        display: inline;
+    }
+}
