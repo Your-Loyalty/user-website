@@ -1,0 +1,28 @@
+{
+    "request": [
+        {
+            "name": "Kuzina",
+            "id": 1,
+            "points": 420,
+            "backgroundColor": "#000000",
+            "foregroundColor": "#ffffff",
+            "logo": "kuzina_logo"
+        },
+        {
+            "name": "Shurubor",
+            "id": 2,
+            "points": 69,
+            "backgroundColor": "#23590C",
+            "foregroundColor": "#ffffff",
+            "logo": "shurubor_logo"
+        },
+        {
+            "name": "Brewsell",
+            "id": 3,
+            "points": 5,
+            "backgroundColor": "#250BA1",
+            "foregroundColor": "#ffffff",
+            "logo": "b_logo"
+        }
+    ]
+}
