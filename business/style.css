@@ -353,7 +353,7 @@ figcaption {
 
 /* Image grid (like your screenshot bottom row) */
 .img-grid {
-    margin-top: 16px;
+    /* margin-top: 16px; */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 14px;
@@ -459,7 +459,7 @@ figcaption {
 
     .pdf object,
     .pdf iframe {
-        height: 420px;
+        height: 220px;
     }
 }
 
@@ -682,3 +682,56 @@ figcaption {
     justify-content: center;
     /* centers parent when alone */
 }
+
+
+
+
+.cardly-achievements-details {
+    position: relative;
+    /* margin-left: 18px; */
+    /* indentation */
+}
+
+/* vertical line
+.cardly-achievements-details::before {
+    content: "";
+    position: absolute;
+    left: -18px;
+    top: 0.4em;
+    bottom: 0.4em;
+    width: 2px;
+    background: rgba(140, 140, 140, 0.35);
+    border-radius: 2px;
+    cursor: pointer;
+} */
+
+/* summary styling */
+.cardly-achievements-summary {
+    cursor: pointer;
+    font-weight: 600;
+    list-style: none;
+}
+
+/* remove default triangle */
+.cardly-achievements-summary::-webkit-details-marker {
+    display: none;
+}
+
+/* custom arrow */
+.cardly-achievements-summary::before {
+    content: "▸";
+    display: inline-block;
+    margin-right: 8px;
+    transition: transform .18s ease;
+}
+
+/* rotate arrow when open */
+.cardly-achievements-details[open]>.cardly-achievements-summary::before {
+    transform: rotate(90deg);
+}
+
+/* content indentation
+.cardly-achievements-content {
+    margin-top: 8px;
+    padding-left: 2px;
+}*/
