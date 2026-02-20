@@ -103,7 +103,7 @@
                     </ol>
 
                     <a class="page-block" href="#page-widgets" data-page="page-widgets">
-                        <!-- <div class="page-block__icon">🧩</div> -->
+                        <div class="page-block__icon">ℹ️</div>
                         <div class="page-block__meta">
                             <div class="page-block__title">Виджит — это карточка…</div>
                             <div class="page-block__desc">Примеры виджетов…</div>
@@ -168,37 +168,18 @@
                         <figcaption>Optional caption under an image, like in exports.</figcaption>
                     </figure> -->
 
-                    <!-- PDF embed (optional) -->
-                    <section class="pdf" aria-label="PDF embed">
-                        <div class="pdf-bar">
-                            <div class="pdf-name">Pitch Deck.pdf</div>
-                            <a href="assets/pitch.pdf" target="_blank" rel="noreferrer">Open</a>
-                        </div>
-                        <!-- Use object OR iframe. object is nice because it degrades gracefully. -->
-                        <object data="assets/pitch.pdf" type="application/pdf">
-                            <iframe src="assets/pitch.pdf" title="Embedded PDF"></iframe>
-                        </object>
-                    </section>
-
                     <!-- Code / markdown examples (optional) -->
                     <!-- <h2>Markdown-ish elements</h2>
                     <p>
                         Inline <code>code</code> looks like Craft. Here’s a code block:
                     </p>
                     <pre><code>npm install
-npm run build
-# deploy /docs to GitHub Pages</code></pre> -->
+                                npm run build
+                                # deploy /docs to GitHub Pages</code></pre> -->
 
-                    <blockquote>
+                    <!-- <blockquote>
                         <p>Blockquote text (useful for notes, citations, etc.).</p>
-                    </blockquote>
-                </div>
-            </article>
-
-
-            <article class="card">
-                <div class="content">
-                    <p>Another card</p>
+                    </blockquote> -->
                 </div>
             </article>
         </section>
@@ -593,14 +574,113 @@ npm run build
                     <button class="child-close" type="button" data-close-child aria-label="Close child">×</button>
                 </div>
 
-                <p>Примеры: баланс, уровень, расписание, акции…</p>
+                <figcaption>Примеры виджетов:</figcaption>
+
+                <h3>Виджет с балансом и уровнем профиля</h3>
+                <div class="img-grid" aria-label="Image grid">
+                    <figure>
+                        <img src="assets/widget_points.png" alt="Points widget" />
+                    </figure>
+                </div>
+
                 <hr />
-                <p class="muted">…your other child content…</p>
+                <h3>Виджет с меню</h3>
+                <div class="img-grid" aria-label="Image grid">
+                    <figure>
+                        <img src="assets/widget_menu.png" alt="Menu widget" />
+                    </figure>
+                </div>
+
+                <hr />
+                <h3>Виджет для фидбэк от пользователя</h3>
+                <div class="img-grid" aria-label="Image grid">
+                    <figure>
+                        <img src="assets/widget_feedback.png" alt="Feedback widget" />
+                    </figure>
+                </div>
+
+                <hr />
+                <h3>Виджет с ачивками пользователя</h3>
+                <div class="img-grid" aria-label="Image grid">
+                    <figure>
+                        <img src="assets/widget_achievments.png" alt="Achievments widget" />
+                    </figure>
+                </div>
+
+                <blockquote>
+                    <details class="cardly-achievements-details">
+                        <summary class="cardly-achievements-summary">
+                            Подробнее про ачивки
+                        </summary>
+
+                        <div class="cardly-achievements-content">
+
+                            <p>
+                                Ачивки (или достижения) — это один из способов геймификации программы лояльности.
+                                Для кого-то — приятные ощущения <em>постоянки</em>; для других — гордая коллекция
+                                красивых, уникальных для каждого заведения изображений, которые можно обменять
+                                на плюшки на усмотрение компании (стикеры, мерч, продукты питания и т.п.).
+                            </p>
+
+                            <h4>Примеры</h4>
+
+                            <p><strong>Самые банальные:</strong></p>
+                            <ul>
+                                <li>50 чашек кофе / шаверм / цветов</li>
+                                <li>100 чашек кофе</li>
+                                <li>500 чашек кофе</li>
+                                <li>1000 чашек кофе</li>
+                                <li>Испробовал каждую позицию в меню</li>
+                                <li>10 походов в салон красоты</li>
+                            </ul>
+
+                            <p><strong>Более уникальные, разработанные заведением (самостоятельно или с нашей
+                                    поддержкой):</strong></p>
+                            <ul>
+                                <li>
+                                    <strong>Киты в БрюСель</strong> — можно нарисовать 50 уникальных китов:
+                                    40 обычных, 6 редких, 3 суперредких и 1 ультраредкий.
+                                    Получение ультраредкого кита даёт специальную ачивку.
+                                </li>
+                            </ul>
+                        </div>
+                    </details>
+                </blockquote>
+
+                <hr />
+                <h3>Виджет с локациями филлиалов</h3>
+                <div class="img-grid" aria-label="Image grid">
+                    <figure>
+                        <img src="assets/widget_locations.png" alt="Store locations widget" />
+                    </figure>
+                </div>
+
+                <hr />
+                <h3>Виджет с промо материалами от компании</h3>
+                <p>По сути изображения либо с ссылками на их основной сайт, либо прямо в приложении</p>
+                <div class="img-grid" aria-label="Image grid">
+                    <figure>
+                        <img src="assets/widget_promo_materials.png" alt="Promo-materials widget" />
+                    </figure>
+                </div>
+
+                <hr />
+                <h3>История покупок</h3>
+                <div class="img-grid" aria-label="Image grid">
+                    <figure>
+                        <img src="assets/widget_history.png" alt="Order history widget" />
+                    </figure>
+                </div>
+
+                <hr />
+                <h3>Дополнительные виджеты</h3>
+                <ul>
+                    <li>Обмен баллов на мерч или пожертвование в благотворительные фонды (не баллов а денег)</li>
+                </ul>
             </div>
         </article>
     </template>
 </body>
-
 
 <script src="script.js"></script>
 
