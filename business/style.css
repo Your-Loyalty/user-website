@@ -1,0 +1,684 @@
+:root {
+    --bg1: #2f76ff;
+    --bg2: #5a3bff;
+    --bg3: #2b8cff;
+
+    --page-max: 980px;
+    --card-radius: 18px;
+    --card-shadow: 0 18px 60px rgba(0, 0, 0, .14);
+    --card-border: rgba(0, 0, 0, .06);
+
+    --text: rgba(15, 23, 42, .92);
+    --muted: rgba(15, 23, 42, .62);
+    --hair: rgba(15, 23, 42, .10);
+
+    --link: #2563eb;
+    --code-bg: rgba(2, 6, 23, .06);
+
+    --callout-bg: rgba(16, 185, 129, .10);
+    --callout-border: rgba(16, 185, 129, .55);
+
+    --card-pad: 44px;
+    --card-pad-mobile: 22px;
+
+    --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --sans: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    overscroll-behavior: none;
+    overflow: hidden;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    font-family: var(--sans);
+    color: var(--text);
+    background:
+        radial-gradient(1200px 700px at 15% 10%, rgba(255, 255, 255, .22), transparent 55%),
+        radial-gradient(900px 600px at 80% 0%, rgba(255, 255, 255, .14), transparent 60%),
+        linear-gradient(135deg, var(--bg1), var(--bg2) 55%, var(--bg3));
+    padding: 0;
+}
+
+/* Page wrapper */
+.wrap {
+    max-width: var(--page-max);
+    margin: 0 auto;
+}
+
+/* “Export card” */
+.card {
+    background: rgba(255, 255, 255, .94);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--card-border);
+    border-radius: var(--card-radius);
+    box-shadow: var(--card-shadow);
+    overflow: hidden;
+}
+
+/* Header strip (optional) */
+.topbar {
+    padding: 18px 22px;
+    border-bottom: 1px solid rgba(0, 0, 0, .06);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, .75), rgba(255, 255, 255, .45));
+}
+
+.doc-title {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: .2px;
+    color: rgba(15, 23, 42, .78);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.badge {
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(0, 0, 0, .10);
+    background: rgba(255, 255, 255, .6);
+    color: rgba(15, 23, 42, .7);
+}
+
+/* Content */
+.content {
+    padding: var(--card-pad);
+}
+
+@media (max-width: 720px) {
+    /* body {
+        padding: 28px 14px 44px;
+    } */
+
+    .content {
+        padding: var(--card-pad-mobile);
+    }
+}
+
+/* “Craft-ish” typography */
+h1,
+h2,
+h3 {
+    margin: 0 0 14px;
+    letter-spacing: -0.02em;
+}
+
+h1 {
+    font-size: 34px;
+    line-height: 1.12;
+    font-weight: 750;
+}
+
+h2 {
+    font-size: 22px;
+    line-height: 1.25;
+    font-weight: 700;
+    margin-top: 28px;
+}
+
+h3 {
+    font-size: 18px;
+    line-height: 1.3;
+    font-weight: 700;
+    margin-top: 22px;
+}
+
+p {
+    margin: 10px 0 0;
+    line-height: 1.7;
+    color: var(--text);
+    font-size: 15.5px;
+}
+
+.muted {
+    color: var(--muted);
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid var(--hair);
+    margin: 26px 0;
+}
+
+a {
+    color: var(--link);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+ul,
+ol {
+    margin: 10px 0 0;
+    padding-left: 22px;
+    line-height: 1.7;
+    font-size: 15.5px;
+}
+
+li {
+    margin: 6px 0;
+}
+
+/* Inline code + code blocks */
+code {
+    font-family: var(--mono);
+    font-size: .92em;
+    background: var(--code-bg);
+    padding: 2px 6px;
+    border-radius: 6px;
+    border: 1px solid rgba(2, 6, 23, .06);
+}
+
+pre {
+    margin: 14px 0 0;
+    padding: 14px 16px;
+    background: rgba(2, 6, 23, .06);
+    border: 1px solid rgba(2, 6, 23, .10);
+    border-radius: 12px;
+    overflow: auto;
+    line-height: 1.55;
+    font-size: 13.5px;
+    font-family: var(--mono);
+    color: rgba(2, 6, 23, .85);
+}
+
+pre code {
+    background: transparent;
+    border: 0;
+    padding: 0;
+    border-radius: 0;
+    font-size: inherit;
+}
+
+/* Block quote (markdown) */
+blockquote {
+    margin: 16px 0 0;
+    padding: 12px 14px;
+    border-left: 4px solid rgba(15, 23, 42, .25);
+    background: rgba(15, 23, 42, .04);
+    border-radius: 12px;
+    color: rgba(15, 23, 42, .80);
+}
+
+blockquote p {
+    margin: 0;
+}
+
+/* Callout (Craft-ish) */
+.callout {
+    margin: 16px 0 0;
+    display: flex;
+    gap: 12px;
+    padding: 14px 16px;
+    border-radius: 12px;
+    background: var(--callout-bg);
+    border: 1px solid rgba(16, 185, 129, .22);
+    box-shadow: 0 10px 28px rgba(16, 185, 129, .10);
+    align-items: flex-start;
+}
+
+.callout::before {
+    content: "";
+    width: 4px;
+    border-radius: 999px;
+    background: var(--callout-border);
+    align-self: stretch;
+    margin-right: 4px;
+}
+
+.callout-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 8px;
+    display: grid;
+    place-items: center;
+    background: rgba(255, 255, 255, .65);
+    border: 1px solid rgba(16, 185, 129, .18);
+    flex: 0 0 auto;
+    margin-top: 2px;
+}
+
+.callout-title {
+    margin: 0;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 1.3;
+}
+
+.callout-body {
+    margin-top: 4px;
+    color: rgba(15, 23, 42, .72);
+    font-size: 14.5px;
+    line-height: 1.6;
+}
+
+/* “Block link” (Craft export link preview-ish) */
+.link-card {
+    margin: 14px 0 0;
+    display: flex;
+    gap: 14px;
+    padding: 14px 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(15, 23, 42, .10);
+    background: rgba(255, 255, 255, .65);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, .06);
+    align-items: center;
+    text-decoration: none;
+}
+
+.link-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: rgba(15, 23, 42, .06);
+    border: 1px solid rgba(15, 23, 42, .10);
+    display: grid;
+    place-items: center;
+    flex: 0 0 auto;
+}
+
+.link-meta {
+    min-width: 0;
+}
+
+.link-title {
+    margin: 0;
+    font-weight: 700;
+    font-size: 14.5px;
+    color: rgba(15, 23, 42, .86);
+    line-height: 1.25;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.link-desc {
+    margin: 4px 0 0;
+    font-size: 13.5px;
+    color: rgba(15, 23, 42, .60);
+    line-height: 1.35;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.link-card:hover {
+    border-color: rgba(37, 99, 235, .28);
+    box-shadow: 0 16px 40px rgba(37, 99, 235, .14);
+    transform: translateY(-1px);
+    transition: .15s ease;
+}
+
+/* Image(s) like Craft export: rounded, subtle border */
+figure {
+    margin: 16px 0 0;
+}
+
+.img {
+    width: 100%;
+    border-radius: 14px;
+    border: 1px solid rgba(15, 23, 42, .10);
+    box-shadow: 0 14px 44px rgba(0, 0, 0, .10);
+    display: block;
+    background: rgba(255, 255, 255, .8);
+}
+
+figcaption {
+    margin-top: 8px;
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.4;
+}
+
+/* Image grid (like your screenshot bottom row) */
+.img-grid {
+    margin-top: 16px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+    max-width: 100%;
+}
+
+@media (min-width:720px) {
+    .img-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 840px) {
+    .img-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 520px) {
+    .img-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* .img-grid a {
+    display: block;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid rgba(15, 23, 42, .10);
+    box-shadow: 0 14px 44px rgba(0, 0, 0, .10);
+    background: rgba(255, 255, 255, .75);
+} */
+/* Tile container */
+.img-grid figure {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid rgba(15, 23, 42, .10);
+    box-shadow: 0 14px 44px rgba(0, 0, 0, .10);
+    background: rgba(255, 255, 255, .75);
+
+    /* Optional: gives nice consistent row height */
+    min-height: 180px;
+}
+
+/* .img-grid img {
+    width: 100%;
+    height: auto;
+    display: block;
+} */
+
+/* Image: FIT, don't crop, keep proportions */
+.img-grid img {
+    max-width: 100%;
+    max-height: 320px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+/* PDF embed block */
+.pdf {
+    margin-top: 16px;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid rgba(15, 23, 42, .10);
+    box-shadow: 0 14px 44px rgba(0, 0, 0, .10);
+    background: rgba(255, 255, 255, .8);
+}
+
+.pdf .pdf-bar {
+    padding: 10px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    border-bottom: 1px solid rgba(15, 23, 42, .08);
+}
+
+.pdf .pdf-name {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: rgba(15, 23, 42, .74);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.pdf object,
+.pdf iframe {
+    width: 100%;
+    height: 520px;
+    display: block;
+    border: 0;
+    background: white;
+}
+
+@media (max-width: 720px) {
+
+    .pdf object,
+    .pdf iframe {
+        height: 420px;
+    }
+}
+
+/* Small “comment input” line like Craft exports sometimes show */
+.comment-line {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    border-radius: 12px;
+    border: 1px solid rgba(15, 23, 42, .10);
+    background: rgba(255, 255, 255, .65);
+    color: rgba(15, 23, 42, .50);
+    font-size: 14px;
+}
+
+.comment-dot {
+    width: 22px;
+    height: 22px;
+    border-radius: 8px;
+    border: 1px solid rgba(15, 23, 42, .12);
+    background: rgba(15, 23, 42, .05);
+    display: grid;
+    place-items: center;
+    flex: 0 0 auto;
+    font-size: 12px;
+}
+
+/* Footer spacing */
+.spacer {
+    height: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Horizontal scroller holding the columns */
+/* .pages {
+    display: flex;
+    gap: 28px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: 18px 18px 18px;
+} */
+
+.pages {
+    height: 100dvh;
+    overflow-x: auto;
+    overflow-y: visible;
+    /* important: don’t let .pages become a vertical scroller */
+
+    display: flex;
+    gap: 0px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    align-items: flex-start;
+    /* prevent “stretch” vibes */
+}
+
+/* Each page column */
+/* .page {
+    flex: 0 0 auto;
+    width: min(720px, calc(100vw - 56px));
+    scroll-snap-align: start;
+} */
+
+.page {
+    flex: 0 0 auto;
+    width: min(720px, calc(100dvw - 0px));
+    height: 100%;
+    /* fill .pages height */
+    padding: 20px;
+    overflow-y: auto;
+    /* ✅ the page scrolls */
+    overscroll-behavior: contain;
+    scroll-snap-align: start;
+}
+
+/* Independent vertical scrolling inside each page */
+.card {
+    height: auto;
+    margin-bottom: 20px;
+    /* overflow: hidden; */
+}
+
+.page .content {
+    height: auto;
+    /*100dvh*/
+    overflow-y: auto;
+    /* padding: 44px; */
+}
+
+/* @media (max-width: 720px) {
+    .page .content {
+        padding: 22px;
+    }
+} */
+
+/* Child header (breadcrumb + close) */
+.child-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 8px;
+}
+
+.breadcrumb {
+    font-size: 13px;
+    color: rgba(15, 23, 42, .58);
+    margin-bottom: 10px;
+}
+
+.breadcrumb .sep {
+    opacity: .55;
+    padding: 0 6px;
+}
+
+.child-close {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    border: 1px solid rgba(15, 23, 42, .12);
+    background: rgba(255, 255, 255, .75);
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.child-close:hover {
+    background: rgba(255, 255, 255, .92);
+}
+
+/* Page block link styling (Craft-ish) */
+.page-block {
+    margin-top: 14px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(15, 23, 42, .10);
+    background: rgba(255, 255, 255, .65);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, .06);
+    text-decoration: none;
+    color: inherit;
+}
+
+.page-block:hover {
+    border-color: rgba(37, 99, 235, .28);
+    box-shadow: 0 16px 40px rgba(37, 99, 235, .14);
+    transform: translateY(-1px);
+    transition: .15s ease;
+}
+
+.page-block__icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: rgba(15, 23, 42, .06);
+    border: 1px solid rgba(15, 23, 42, .10);
+    display: grid;
+    place-items: center;
+    flex: 0 0 auto;
+}
+
+.page-block__meta {
+    min-width: 0;
+    flex: 1;
+}
+
+.page-block__title {
+    font-weight: 700;
+    font-size: 14.5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.page-block__desc {
+    margin-top: 4px;
+    font-size: 13.5px;
+    color: rgba(15, 23, 42, .60);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.page-block__chev {
+    color: rgba(15, 23, 42, .45);
+    font-size: 20px;
+    line-height: 1;
+}
+
+/* Empty child state */
+.child-empty {
+    padding: 8px 0;
+}
+
+.pages:has(.page[data-role="child"]) {
+    justify-content: flex-start;
+}
+
+.pages {
+    justify-content: center;
+    /* centers parent when alone */
+}

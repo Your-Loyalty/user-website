@@ -1,79 +1,327 @@
-<!DOCTYPE html>
-<html lang="en" style="overflow:hidden;overscroll-behavior:none;width:100%;height:100%">
+<!doctype html>
+<html lang="en">
 
 <head>
-    <meta name="robots" content="noindex">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Cardly</title>
-    <link
-        href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,300i,400,400i,500,500i,700,700i&amp;display=swap"
-        rel="stylesheet">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Craft Export-Style Page Template</title>
+    <meta name="description" content="Static HTML/CSS template inspired by Craft's export look." />
+
+    <!-- (Optional) Inter-like font. Remove if you want fully offline. -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap"
-        rel="stylesheet">
-    <link href="https://www.craft.do/share/static/fonts/avenirnextroundedw01/fontdef.r-11-gd9b659d.css"
-        rel="stylesheet">
-    <link href="https://www.craft.do/share/static/fonts/sourceserif/fontdef.r-24-g083f5a5.css" rel="stylesheet">
-    <script type="text/javascript">
-        if (window.location.hostname.endsWith("craft.do")) {
-            var MTIProjectId = "a3d3f738-d2f0-4742-a66a-c317be8eed82";
-            !function () {
-                var e = document.createElement("script");
-                e.type = "text/javascript",
-                    e.async = "true",
-                    e.src = "/share/static/fonts/mtiFontTrackingCode.js",
-                    (document.getElementsByTagName("head")[0] || document.getElementsByTagName("body")[0]).appendChild(e)
-            }()
-        }
-    </script>
-    <link rel="apple-touch-icon" sizes="180x180" href="https://www.craft.do/share/static/apple-touch-icon.png">
-    <link rel="manifest" href="https://www.craft.do/share/static/site.webmanifest">
-    <link media="(prefers-color-scheme: dark)" rel="icon" type="image/png" sizes="32x32"
-        href="https://www.craft.do/share/static/favicon-32x32-dark.png">
-    <link media="(prefers-color-scheme: dark)" rel="icon" type="image/png" sizes="16x16"
-        href="https://www.craft.do/share/static/favicon-16x16-dark.png">
-    <link media="(prefers-color-scheme: dark)" rel="icon" type="image/x-icon"
-        href="https://www.craft.do/share/static/favicon-dark.ico">
-    <link media="(prefers-color-scheme: dark)" rel="mask-icon"
-        href="https://www.craft.do/share/static/safari-pinned-tab.svg" color="#ffffff">
-    <link media="(prefers-color-scheme: light)" rel="icon" type="image/png" sizes="32x32"
-        href="https://www.craft.do/share/static/favicon-32x32-light.png">
-    <link media="(prefers-color-scheme: light)" rel="icon" type="image/png" sizes="16x16"
-        href="https://www.craft.do/share/static/favicon-16x16-light.png">
-    <link media="(prefers-color-scheme: light)" rel="icon" type="image/x-icon"
-        href="https://www.craft.do/share/static/favicon.ico">
-    <link media="(prefers-color-scheme: light)" rel="mask-icon"
-        href="https://www.craft.do/share/static/safari-pinned-tab.svg" color="#120652">
-    <meta name="theme-color" content="#000000">
-    <meta name="luki:app-version" content="share-v3.3.12">
-    <meta name="luki:pl-domain-path" content="/s">
-    <meta name="luki:custom-domain" content="true">
-    <script defer="defer" src="https://www.craft.do/share/static/js/vendors~main.05fec9eb.js"></script>
-    <script defer="defer" src="https://www.craft.do/share/static/js/main.c6f1e40c.js"></script>
-    <link href="https://www.craft.do/share/static/css/main.6f343068.css" rel="stylesheet">
-    <meta name="luki:share-id" content="XGJF1TD5Jli2Po">
-    <meta name="luki:space-id" content="ef1b9901-6e31-4b22-c839-7966e37f8c59">
-    <meta name="luki:doc-id" content="3711EDB5-BC0C-4FA7-9149-FAB2BC596F82">
-    <meta name="luki:api-endpoint" content="https://schools-wash-iq0.craft.me/api">
-    <meta name="luki:override-static-asset-root" content="https://www.craft.do">
-    <meta property="og:title" content="Cardly">
-    <meta property="og:image" content="https://api.craft.do/render/preview/XGJF1TD5Jli2Po">
-    <meta property="og:url" content="https://schools-wash-iq0.craft.me/XGJF1TD5Jli2Po">
-    <meta property="og:image:type" content="image/png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="luki:pl-domain" content="craft.do/s">
-    <meta name="luki:disable-fs"
-        content="fs-object-links,fs-show-author,fs-show-watermark,fs-show-duplicate-as-template,fs-email-share,fs-login,fs-open-in-app,fs-download-pdf">
-    <meta name="luki:enable-fs" content="fs-add-comment,fs-view-comment,fs-show-title,fs-enable-column-view">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body style="position:relative;margin:0;height:100%;overflow:auto">
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root" style="height:100%"></div>
+
+<body>
+    <!-- HORIZONTAL NESTED PAGES WRAPPER -->
+    <div class="pages" id="pages" aria-label="Nested pages scroller">
+        <!-- Parent page -->
+        <section class="page" data-role="parent" aria-label="Parent page">
+            <article class="card">
+                <div class="content">
+                    <!-- PAGE CONTENT (replace everything below with your content) -->
+
+                    <h1>Cardly</h1>
+
+                    <!-- <div class="comment-line">
+                        <div class="comment-dot">💬</div>
+                        <div>Add comment</div>
+                    </div> -->
+
+                    <a class="page-block" href="#page-detailed" data-page="page-detailed">
+                        <div class="page-block__icon">📖</div>
+                        <div class="page-block__meta">
+                            <div class="page-block__title">Карточка проекта</div>
+                            <div class="page-block__desc">Описание по шаблону</div>
+                        </div>
+                        <div class="page-block__chev">›</div>
+                    </a>
+
+                    <hr />
+
+                    <p>
+                        <strong>Cardly</strong> — это платформа для программ лояльности малых-средних бизнесов.
+                    </p>
+
+                    <p>
+                        <strong>Ц.А:</strong> малый бизнес. Конкретнее, в сфере питания/обслуживания:
+                        кафешки, шавермы, бутик свечотницы, маникюр салоны — везде где может быть программа лояльности.
+                    </p>
+
+                    <h2>Фундаментальные принципы</h2>
+                    <ol>
+                        <li>Быстрая регистрация (как и пользователей, так и бизнесов)</li>
+                        <li>Красивый модульный дизайн с виджетами для странички каждой компании</li>
+                        <li>
+                            Установление более глубоких связей с клиентами через соц. взаимодействия —
+                            <mark
+                                style="background: rgba(250, 204, 21, .35); padding: 0 4px; border-radius: 6px;">ачивки</mark>,
+                            закрытые акции/розыгрыши и т.п., обратная связь через
+                            <mark
+                                style="background: rgba(34, 197, 94, .22); padding: 0 4px; border-radius: 6px;">фидбэк</mark>
+                            и
+                            <mark
+                                style="background: rgba(34, 197, 94, .22); padding: 0 4px; border-radius: 6px;">ревью</mark>.
+                        </li>
+                    </ol>
+
+                    <a class="page-block" href="#page-feedback" data-page="page-feedback">
+                        <div class="page-block__icon">✍️</div>
+                        <div class="page-block__meta">
+                            <div class="page-block__title">Фидбэк и ревью</div>
+                            <div class="page-block__desc">Два вида отзывов</div>
+                        </div>
+                        <div class="page-block__chev">›</div>
+                    </a>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="content">
+                    <!-- Link preview block -->
+                    <!-- <a class="link-card" href="#" target="_blank" rel="noreferrer">
+                        <div class="link-icon">📄</div>
+                        <div class="link-meta">
+                            <p class="link-title">Фидбэк и ревью — два вида отзывов</p>
+                            <p class="link-desc">Фидбэк — короткий отзыв на 5–10 слов… (здесь будет ваш текст и ссылка)
+                            </p>
+                        </div>
+                    </a> -->
+
+                    <h2>Что получают пользователи</h2>
+                    <ol>
+                        <li>Красивое, удобное, модульное место, где хранятся их программы лояльности.</li>
+                        <li>
+                            Каждое заведение имеет свою одну страницу, где можно найти всю информацию. На странице
+                            находится сам штрих код и <mark
+                                style="background: rgba(34, 197, 94, .22); padding: 0 4px; border-radius: 6px;">виджиты</mark>
+                            заведения.
+                        </li>
+                    </ol>
+
+                    <a class="page-block" href="#page-widgets" data-page="page-widgets">
+                        <!-- <div class="page-block__icon">🧩</div> -->
+                        <div class="page-block__meta">
+                            <div class="page-block__title">Виджит — это карточка…</div>
+                            <div class="page-block__desc">Примеры виджетов…</div>
+                        </div>
+                        <div class="page-block__chev">›</div>
+                    </a>
+
+                    <!-- Callout block -->
+                    <!-- <section class="callout" role="note" aria-label="Callout">
+                        <div class="callout-icon">🧩</div>
+                        <div>
+                            <p class="callout-title">Виджит — это карточка с полезной информацией</p>
+                            <p class="callout-body">
+                                Примеры: баланс и уровень профиля, расписание, контакты, акции, бонусы, статус и т. п.
+                            </p>
+                        </div>
+                        <div class="page-block__chev">›</div>
+                    </section> -->
+
+                    <ul>
+                        <li>
+                            Каждая страница имеет свой стандартный вид, который задается заведением. Но пользователь в
+                            праве сделать с ним что угодно: убрать/добавить нужные виджиты, поменять любые цвета и тп.
+                        </li>
+                    </ul>
+
+                    <!-- Image grid (3 across) -->
+
+
+                    <div class="img-grid" aria-label="Image grid">
+                        <figure>
+                            <img src="assets/home.png" alt="Home page layout example" />
+                        </figure>
+                        <figure> <img src="assets/page_example_1.png" alt="Business page example #1" />
+                        </figure>
+                        <figure>
+                            <img src="assets/page_example_2.png" alt="Business page example #1" />
+                        </figure>
+                    </div>
+                    <figcaption><small><i>
+                                Визуальная концепция. Все бренды и логотипы принадлежат их владельцам
+                                и показаны
+                                только в качестве примера. Сотрудничество или поддержка не подразумеваются.
+                            </i></small></figcaption>
+
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="content">
+
+                    <h2>Что получает бизнес</h2>
+                    <ol>
+                        <li>Как минимум — готовый продукт программы лояльности, сохраняя стиль и имидж брэнда (отдельная
+                            страница, где компании имеют полный* контроль того, как они хотят себя презентовать)</li>
+                        <li>Фидбеки/ревью — как ещё один инструмент в арсенале менеджера</li>
+                    </ol>
+
+                    <!-- Single image (optional) -->
+                    <!-- <figure>
+                        <img class="img" src="assets/canvas.png" alt="Hero image" />
+                        <figcaption>Optional caption under an image, like in exports.</figcaption>
+                    </figure> -->
+
+                    <!-- PDF embed (optional) -->
+                    <section class="pdf" aria-label="PDF embed">
+                        <div class="pdf-bar">
+                            <div class="pdf-name">Pitch Deck.pdf</div>
+                            <a href="assets/pitch.pdf" target="_blank" rel="noreferrer">Open</a>
+                        </div>
+                        <!-- Use object OR iframe. object is nice because it degrades gracefully. -->
+                        <object data="assets/pitch.pdf" type="application/pdf">
+                            <iframe src="assets/pitch.pdf" title="Embedded PDF"></iframe>
+                        </object>
+                    </section>
+
+                    <!-- Code / markdown examples (optional) -->
+                    <!-- <h2>Markdown-ish elements</h2>
+                    <p>
+                        Inline <code>code</code> looks like Craft. Here’s a code block:
+                    </p>
+                    <pre><code>npm install
+npm run build
+# deploy /docs to GitHub Pages</code></pre> -->
+
+                    <blockquote>
+                        <p>Blockquote text (useful for notes, citations, etc.).</p>
+                    </blockquote>
+                </div>
+            </article>
+
+
+            <article class="card">
+                <div class="content">
+                    <p>Another card</p>
+                </div>
+            </article>
+        </section>
+
+
+        <template id="child-shell">
+            <section class="page" data-role="child" aria-label="Child page">
+                <div id="childMount"></div>
+            </section>
+        </template>
+    </div>
+
+
+    <!-- CHILD PAGE TEMPLATES -->
+    <template id="page-detailed">
+        <article class="card">
+            <div class="content">
+                <div class="child-head">
+                    <div>
+                        <div class="breadcrumb">Cardly <span class="sep">›</span> Карточка проекта</div>
+                        <h1>Карточка проекта</h1>
+                    </div>
+                    <button class="child-close" type="button" data-close-child aria-label="Close child">×</button>
+                </div>
+
+                <div class="img-grid" aria-label="Image grid">
+                    <a href="assets/canvas.png" title="Open image">
+                        <img src="assets/canvas.png" alt="The Business Model Canvas" />
+                    </a>
+                </div>
+
+                <p>Примеры: баланс, уровень, расписание, акции…</p>
+                <hr />
+                <p class="muted">…your other child content…</p>
+            </div>
+        </article>
+    </template>
+
+    <template id="page-feedback">
+        <article class="card">
+            <div class="content">
+                <div class="child-head">
+                    <div>
+                        <div class="breadcrumb">Cardly <span class="sep">›</span> Фидбэк и ревью</div>
+                        <h1>Фидбэк и ревью — два вида отзывов</h1>
+                    </div>
+                    <button class="child-close" type="button" data-close-child aria-label="Close child">×</button>
+                </div>
+
+                <p><strong>Фидбэк</strong> — короткий отзыв на 5-10 слов, с одним рейтингом (0-5 звезд). Фидбэк возможно
+                    сделать
+                    только при следующих условиях:</p>
+                <ul>
+                    <li>Пользователь оставляет фидбэк на конкретный заказ. Нет заказа — нет фидбэка</li>
+                    <li>Один фидбэк в течение одного часа</li>
+                    <li>Фидбэк можно оставить в течение 48ч после совершения покупки</li>
+                </ul>
+
+                <p>
+                    <strong>Цель фидбэков:</strong>
+                </p>
+                <ol>
+                    <li>Предоставить пользователям возможность дать обратную связь на те или иные мелочи, не нагружая
+                        персонал (или наоборот — подбодрить добрым словом).</li>
+                    <li>Предоставить менеджеру более точный инструмент для отслеживания потенциальных проблем (та же
+                        “книга
+                        для жалоб и пожеланий” — но доступнее всем).</li>
+                </ol>
+
+                <blockquote>
+                    <p>Фидбеки видны всем пользователям (на отдельной странице) со всеми остальными отзывами.</p>
+                </blockquote>
+
+                <p>На основании фидбэков формируется <mark
+                        style="background: rgba(34, 197, 94, .22); padding: 0 4px; border-radius: 6px;">динамический
+                        рейтинг</mark> — мини рейтинг за день. Данный рейтинг виден только
+                    менеджерам заведения.</p>
+
+                <hr />
+                <p>
+                    <strong>Примеры фидбеков:</strong>
+                </p>
+
+                <div class="img-grid" aria-label="Image grid">
+                    <figure>
+                        <img src="assets/feedback_examples.png" alt="feedback examples" />
+                    </figure>
+                </div>
+
+            </div>
+        </article>
+
+
+        <article class="card">
+            <div class="content">
+                <p>
+                    <strong>Примеры фидбеков:</strong>
+                </p>
+            </div>
+        </article>
+
+    </template>
+
+    <template id="page-widgets">
+        <article class="card">
+            <div class="content">
+                <div class="child-head">
+                    <div>
+                        <div class="breadcrumb">Cardly <span class="sep">›</span> Виджиты</div>
+                        <h1>Виджит — это карточка с полезной информацией</h1>
+                    </div>
+                    <button class="child-close" type="button" data-close-child aria-label="Close child">×</button>
+                </div>
+
+                <p>Примеры: баланс, уровень, расписание, акции…</p>
+                <hr />
+                <p class="muted">…your other child content…</p>
+            </div>
+        </article>
+    </template>
 </body>
+
+
+<script src="script.js"></script>
 
 </html>
