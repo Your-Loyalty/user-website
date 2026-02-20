@@ -37,7 +37,7 @@ body {
 }
 
 body {
-    min-height: 100vh;
+    min-height: 100dvh;
     margin: 0;
     font-family: var(--sans);
     color: var(--text);
@@ -45,7 +45,29 @@ body {
         radial-gradient(1200px 700px at 15% 10%, rgba(255, 255, 255, .22), transparent 55%),
         radial-gradient(900px 600px at 80% 0%, rgba(255, 255, 255, .14), transparent 60%),
         linear-gradient(135deg, var(--bg1), var(--bg2) 55%, var(--bg3));
-    padding: 0;
+    /* padding: 0; */
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+
+    /* Fill the safe areas with the same background */
+    background:
+        radial-gradient(1200px 700px at 15% 10%, rgba(255, 255, 255, .22), transparent 55%),
+        radial-gradient(900px 600px at 80% 0%, rgba(255, 255, 255, .14), transparent 60%),
+        linear-gradient(135deg, var(--bg1), var(--bg2) 55%, var(--bg3));
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* helps some iOS cases */
+
+    /* Ensure the background paints under notch/home indicator */
+    padding-top: env(safe-area-inset-top);
+    padding-right: env(safe-area-inset-right);
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-left: env(safe-area-inset-left);
 }
 
 /* Page wrapper */
