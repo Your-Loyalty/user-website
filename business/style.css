@@ -890,11 +890,21 @@ figcaption {
     padding-left: 2px;
 }*/
 
-.footter::before {
+footer {
     font-size: small;
     font-weight: lighter;
     align-items: center;
-    content: "© 2026 Cardly. Cardly™ is a product name.";
+    /* content: "Made by Daniel Gehrman • © 2026 Cardly • Cardly™ is a product name."; */
+}
+
+.mobile-break {
+    display: none;
+}
+
+@media (max-width: 640px) {
+    .mobile-break {
+        display: block;
+    }
 }
 
 mark {
