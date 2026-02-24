@@ -730,7 +730,7 @@ figcaption {
 /* summary styling */
 .cardly-achievements-summary {
     cursor: pointer;
-    font-weight: 600;
+    font-weight: normal;
     list-style: none;
 }
 
