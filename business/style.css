@@ -255,6 +255,7 @@ body {
 /* Content */
 .content {
     padding: var(--card-pad);
+    /* 0 var(--card-pad) var(--card-pad); */
 }
 
 @media (max-width: 720px) {
@@ -285,7 +286,7 @@ h2 {
     font-size: 22px;
     line-height: 1.25;
     font-weight: 700;
-    margin-top: 28px;
+    /* margin-top: 28px; */
 }
 
 h3 {
