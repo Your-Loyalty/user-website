@@ -911,3 +911,66 @@ footer {
 mark {
     color: var(--text);
 }
+
+/* Partners grid */
+.partner-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--text-soft);
+    margin: 20px 0 0;
+}
+
+.partner-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.partner-tile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: inherit;
+    width: 96px;
+}
+
+.partner-tile:hover .partner-logo {
+    border-color: var(--border-accent);
+    box-shadow: var(--shadow-accent);
+    transform: translateY(-2px);
+}
+
+.partner-logo {
+    width: 96px;
+    height: 96px;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    background: white;
+    box-shadow: var(--shadow-1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 10px;
+    transition: border-color .15s ease, box-shadow .15s ease, transform .15s ease;
+}
+
+.partner-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.partner-name {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-2);
+    text-align: center;
+    line-height: 1.3;
+}
