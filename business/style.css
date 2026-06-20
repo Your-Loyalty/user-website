@@ -783,6 +783,7 @@ figcaption {
     box-shadow: var(--shadow-accent);
     transform: translateY(-1px);
     transition: .15s ease;
+    text-decoration: none;
 }
 
 .page-block__icon {
